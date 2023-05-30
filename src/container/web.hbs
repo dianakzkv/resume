@@ -1,0 +1,43 @@
+<div>
+  {{#with web}}
+    {{#each languages}}
+      {{> details name=name description=description open=true}}
+      version:
+      {{version}}
+
+        <ul>
+            {{#each elements}}
+                {{> details name=name description=description }}
+              <section>
+                {{#each attributes}}
+                  {{> details name=name description=description }}
+                {{/each}}
+              </section>
+            {{/each}}
+        </ul>
+
+        <ul>
+            {{#each properties}}
+               {{> details name=name description=description }}
+               <section>
+                {{#each values}}
+                  {{> details name=value description=description }}
+                {{/each}}
+               </section>
+            {{/each}}
+        </ul>
+
+        <ul>
+            {{#each functions}}
+               {{> details name=name description=description }}
+               <section>
+                {{#each parameters}}
+                  {{> details name=name description=description }} <p><em>({{type}})</em></p>
+                {{/each}}
+               </section>
+            {{/each}}
+        </ul>
+
+    {{/each}}
+  {{/with}}
+</div>
