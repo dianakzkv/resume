@@ -1,0 +1,86 @@
+{{#with program}}
+{{> title data="Excursion" big=true}}
+    <section>
+        <div>
+        {{#with excursion}}
+            {{> title data=name big=false}}
+            Location: 
+            {{#with location}}{{city}}, {{country}}{{/with}}
+            <br>
+            Date: {{date}}
+            <br>
+
+            <em>{{> title data="Programs" big=false}}</em>
+            <section>
+                {{#each program}}
+                    <em><b>{{name}}</b></em>
+                    <br>
+                    <section>
+                        {{type}}
+                        <br>
+                        Duration: {{duration}}
+                        <br>
+                        {{#with details}}
+                            {{#with museum}}
+                                Name of museum: "{{name}}"
+                                {{#with location}}
+                                    Address: {{country}}, {{city}}, {{address}}
+                                {{/with}}
+                                <section>
+                                    <b>Exhibits</b>
+                                    <br>
+                                    {{#each exhibits}}
+                                        <ul>
+                                            Name: <b>{{name}}</b>
+                                            <br>
+                                                {{#if artist}}
+                                                    artist: {{artist}}
+                                                    <br>
+                                                {{/if}}
+                                            "{{description}}"
+                                            <br>
+                                            {{#if audio_guide}}
+                                                There is an audio guide
+                                                 <br>
+                                            {{/if}}
+                                        </ul>
+                                    {{/each}}
+                                </section>
+                            {{/with}}
+
+                            <div>
+                                {{#with venue}}
+                                    Name of museum: "{{name}}"
+                                    {{#with location}}
+                                        Address: {{country}}, {{city}}, {{address}}
+                                    {{/with}}
+                                    <em>Performers</em>
+                                {{/with}}
+                                <div>
+                                    {{#each performers}}
+                                        <ul>
+                                            <b>{{name}}</b> - {{type}}
+                                        </ul>
+                                    {{/each}}
+                                </div>
+                            </div>
+
+                            {{#with guide}}
+                                Guide: {{name}}
+                                <br>
+                                Language: {{language}}
+                                <br>
+                                rating: {{rating}}
+                            {{/with}}
+                            <hr>
+                            <br>
+                        {{/with}}
+                        <br>
+                    </section>
+                {{/each}}
+            </section>
+        {{/with}}
+        </div>
+    
+    </section>
+{{/with}}
