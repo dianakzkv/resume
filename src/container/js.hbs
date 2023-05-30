@@ -1,0 +1,120 @@
+<div>
+    <section>
+        {{> title data=name big=true}}
+        <p>{{description}}</p>
+        {{#with history}}
+            {{founder}} ({{year}})
+        {{/with}}
+        <br>
+        <section>
+            <div>
+                 {{> title data="Types" big=false}}
+                <ul>
+                    {{#each types}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div>
+                {{> title data="Syntax" big=false}}
+            </div>
+            <div>
+                <ul>
+                    {{#with syntax}}
+                    
+                    <em>Variables</em>
+                    <ul>
+                        {{#each variables}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <em>Functions</em>
+                    <ul>
+                        {{#each functions}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <em>Conditionals</em>
+                    <ul>
+                        {{#each conditionals}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <em>Loops</em>
+                    <ul>
+                        {{#each loops}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <em>Classes</em>
+                    <ul>
+                        {{#each classes}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    
+                    {{/with}}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                {{> title data="Features" big=false}}
+            </div>
+            <div>
+                <ul>
+                    {{#each features}}
+                        {{this}}<br>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                {{> title data="Libraries" big=false}}
+            </div>
+            <ul>
+                <div>
+                    <ul>
+                        {{#each libraries}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </ul>
+        </section>
+
+        <section>
+            <div>
+                {{> title data="Tools" big=false}}
+            </div>
+            <ul>
+                <div>
+                    <ul>
+                        {{#each tools}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </ul>
+        </section>
+
+        <section>
+            <div>
+                {{> title data="Community" big=false}}
+            </div>
+            <div>
+                <ul>
+                    {{#each community}}
+                        {{name}} - {{type}}
+                        <br>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </section>
+</div>
