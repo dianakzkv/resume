@@ -1,0 +1,140 @@
+<div>
+    <section>
+        {{> title data=make big=true}} 
+        {{> title data=model big=false}} 
+        Year: {{year}}
+        <br>
+        Color: {{color}}
+        
+        {{#with features}}
+            {{#with interior}}
+                <section>
+                    {{#with seats}}
+                        <ul class="list-group">
+                            <li class="list-group-item active" aria-current="true">Seats</li>
+                            <li class="list-group-item">{{material}}</li>
+                            <li class="list-group-item">{{color}}</li>
+                            <li class="list-group-item">{{#if heated}}there is heating{{/if}}</li>
+                            <li class="list-group-item">{{#if ventilated}}ventilated facade{{/if}}</li>
+                        </ul>
+                    {{/with}}
+
+                    <br>
+
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dashboard
+                        </a>
+                        {{#with dashboard}}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">material: {{material}}</a></li>
+                                <li><a class="dropdown-item" href="#">color: {{color}}</a></li>
+                                <li><a class="dropdown-item" href="#">
+                                    {{#with display}}
+                                        Display: {{type}}, {{size}}, {{resolution}}, {{#if touchscreen}}there is touchscreen{{/if}}
+                                    {{/with}}
+                                </a></li>
+                            </ul>
+                        {{/with}}
+                    </div>
+
+                        <br>
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Audio
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            {{#with audio}}
+                                system: {{system}}
+                                <br>
+                                speakers: {{speakers}}
+                                <br>
+                                subwoofer: {{#if subwoofer}}yes{{else}}no{{/if}}
+                                <br>
+                                bluetooth: {{#if bluetooth}}yes{{else}}no{{/if}}
+                                <br>
+                                USB: {{#if USB}}yes{{else}}no{{/if}}
+                            {{/with}}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                       
+                    
+                </section>
+
+            {{/with}}
+
+            {{#with exterior}}
+                <section>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Wheels
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            {{#with wheels}}
+                                Type: {{type}}
+                                <br>
+                                Size: {{size}}
+                                <br>
+                                Color: {{color}}
+                            {{/with}}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Headlights
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            {{#with headlights}}
+                                Type: {{type}}
+                                <br>
+                                Brightness: {{brightness}}
+                                <br>
+                                Automatic: {{#if automatic}}yes{{else}}no{{/if}}
+                            {{/with}}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Sunroof
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            {{#with sunroof}}
+                                Type: {{type}}
+                                <br>
+                                Size: {{size}}
+                                <br>
+                                Automatic: {{#if automatic}}yes{{else}}no{{/if}}
+                            {{/with}}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            {{/with}}
+
+            
+        {{/with}}
+        
+
+
+    </section>
+</div>

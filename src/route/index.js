@@ -798,7 +798,7 @@ router.get('/car', function (req, res) {
         sunroof: {
           type: 'panoramic',
           size: 'large',
-          automatic: true,
+          automatic: false,
         },
       },
       safety: {
