@@ -5,7 +5,7 @@
       {{#with navigation}}
         {{#each links}}
           <div class='nav-item'>
-            <a href='{{href}}' class='nav-link'>{{text}}</a>
+            <a href='{{href}}' class='nav-link  {{#if @last}} disabled{{/if}}'>{{text}}</a>
           </div>
         {{/each}}
       {{/with}}
@@ -141,12 +141,58 @@
 
     <div class="col-12">
         <div class="row">
-            <div class="col-2">
-
+            {{#each footer}}
+            <div class="nav col-2">
+                {{#each this}}
+                <ul>
+                    <a href={{link}} class='nav-link {{#if @last}} disabled{{/if}}'>{{text}}</a>
+                </ul>
+                {{/each}}
             </div>
+            {{/each}}
         </div>
-
     </div>
+
+    {{!-- <div class='col-12 gy-3'>
+      {{#with footer}}
+        <h5>
+          {{title}}
+        </h5>
+        <br />
+        <div class='row'>
+          <div class='col-3'>
+            {{#each navigation}}
+              <ul>
+                <a
+                  href={{href}}
+                  class='btn btn-link'
+                >{{text}}</a>
+              </ul>
+            {{/each}}
+          </div>
+          <div class='col-3'>
+            {{#each socialMedia}}
+              <ul>
+                <a
+                  href={{link}}
+                  class='btn btn-outline-dark'
+                >{{name}}</a>
+              </ul>
+            {{/each}}
+          </div>
+          <div class='col-3'>
+            {{#each partners}}
+              <ul>
+                <a
+                  href={{link}}
+                  class='btn btn-outline-info'
+                >{{name}}</a>
+              </ul>
+            {{/each}}
+          </div>
+        </div>
+      {{/with}}
+    </div> --}}
 
   </div>
 </main>
