@@ -1,0 +1,152 @@
+<main>
+
+  <div>
+    <div class='nav'>
+      {{#with navigation}}
+        {{#each links}}
+          <div class='nav-item'>
+            <a href='{{href}}' class='nav-link'>{{text}}</a>
+          </div>
+        {{/each}}
+      {{/with}}
+    </div>
+  </div>
+
+  <hr class='my-3' />
+
+  <div class='row'>
+    <div class='col-12 p-2'>
+      {{#with newsBlock}}
+        <div
+          class='display-4 text-center mb-5'
+        >{{title}}</div>
+        <div class='row'>
+          {{#each cards}}
+            <div class='col-3'>
+              <div class='card text-bg-dark mb-3'>
+                <div class='card-header'>
+                  {{title}}
+                  {{#if isNew}}
+                    <span
+                      class='badge rounded-pill text-bg-success mx-1 my-1'
+                    >NEW</span>
+                  {{/if}}
+                  {{#if isTop}}
+                    <span
+                      class='badge rounded-pill text-bg-danger mx-1 my-1'
+                    >TOP</span>
+                  {{/if}}
+                </div>
+                <div class='card-body'>
+                  <p class='card-text'>{{description}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/with}}
+    </div>
+
+    <hr class='my-3' />
+
+    {{#with goodsBlock}}
+      <div>
+        <ul class='nav nav-tabs mt-3 mb-4'>
+          {{#each tabs}}
+            <li class='nav-item'>
+              {{#if isActive}}
+                <a
+                  class='nav-link active'
+                  href='#'
+                >{{text}}</a>
+              {{else}}{{#isDisabled}}
+                  <a
+                    class='nav-link disabled'
+                    href='#'
+                  >{{text}}</a>
+                {{else}}
+                  <a class='nav-link' href='#'>{{text}}</a>
+                {{/isDisabled}}{{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class='col-12'>
+        <div class='row'>
+            {{#each cards}}
+                <div class='col-4'>
+                    <div class='card m-2'>
+                        <img src={{image}} class='card-img-top' />
+                        <div class='card-body'>
+                        <h5 class='card-title'>
+                            {{title}}
+                            {{#if isNew}}
+                            <span
+                                class='badge rounded-pill text-bg-primary mx-1 my-1'
+                            >NEW</span>
+                            {{/if}}
+                            {{#if isHot}}
+                            <span
+                                class='badge rounded-pill text-bg-warning mx-1 my-1'
+                            >HOT</span>
+                            {{/if}}
+                        </h6>
+                        <p class='card-text'>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+      </div>
+    {{/with}}
+
+    <hr class='my-3' />
+
+    <div class="col-12">
+        {{#with subscribe}}
+        <div class="card text-bg-dark p-3">
+            <h2 class="mb-3">{{header}}</h2>
+            <p class="mb-2">{{description}}</p>
+            <div class="row">
+                <div class="col-3">
+                        {{#each buttons}}
+                        <a href={{link}} class="btn btn-primary my-2">{{text}}</a>
+                        {{/each}}
+                        <br>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+    <hr class='my-3' />
+
+    <div class="col-12">
+        {{#with service}}
+        <div class="card text-bg-success text-center p-3">
+            <h2 class="mb-3">{{title}}</h2>
+            <p class="mb-2">{{description}}</p>
+                <div class="row-1">
+                    {{#each buttons}}
+                    <a href={{link}} class="btn btn-primary m-2">{{text}}</a>
+                    {{/each}}
+                    <br>
+                </div>
+        </div>
+        {{/with}}
+    </div>
+
+    <hr class='my-3' />
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+        </div>
+
+    </div>
+
+  </div>
+</main>
