@@ -1620,8 +1620,8 @@ router.get('/shopcart', function (req, res) {
           title: 'iPhone 13',
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
-          isHot: false,
-          idNew: false,
+          isHot: true,
+          idNew: true,
         },
         {
           image: 'https://picsum.photos/400/200',
@@ -1637,7 +1637,7 @@ router.get('/shopcart', function (req, res) {
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
-          idNew: false,
+          idNew: true,
         },
       ],
     },
