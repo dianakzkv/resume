@@ -1,0 +1,36 @@
+<main>
+  <div class='row'>
+
+    <div class="col-12">
+        <div class='nav'>
+            {{#with navigation}}
+                {{#each links}}
+                    {{> navforshop href="{{href}}" text="{{text}}" }}
+                {{/each}}
+            {{/with}}
+        </div>
+    </div>
+
+        <hr class="mt-2 mb-5">
+
+
+    <div class='col-12'>
+        <div class="row">
+            <div class="col-8">
+                {{#with formBlock}}
+                    <h1 class="mb-2">{{header}}</h1>
+                    {{#with rating}}
+
+                    {{/with}}
+                {{/with}}
+            </div>
+
+
+            <div class="col-4">
+            </div>
+
+        </div>
+    </div>
+
+  </div>
+</main>
